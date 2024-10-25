@@ -1,92 +1,27 @@
-#Cell Segmentation in Medical Images
+**Cell Segmentation in Medical Images**
 
 
- Outer pipes Cell padding
-
-| Nr. | Autor(i)                                                                                                                                        | Titlul articolului/proiectului                                                                                   | Aplicatie/Domeniu                     | Tehnologii utilizate                                                | Metodologie/Abordare                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Rezultate                                                                                                                                                                                                                                                                                                                                                                                              | Limitari                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Comentarii suplimentare |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
-| 1   | Navid Alemi Koohbanani, Mostafa Jahanifa, Neda Zamani Tajadin4  and Nasir Rajpoot                                                               | NuClick: A Deep Learning Framework for Interactive Segmentation of Microscopy Images                             | Cell segmentation from medical images | NuClick,Grabcut,Graphcut
-
-                                        | Folosesc o aplicatie numita NuClick ce utilizeaza un sistem de arhitectura de retea codificator-decodificator                                                                                                                                                                                                                                                                                                                                                                         | rezultatele sunt foarte robuste
-
-împotriva distorsiunii aplicate în poziţia clicului. De exemplu Schimbarea
-
-locația clicului cu 50 de pixeli face o scădere considerabilă
-
-performanță care se poate datora aceluiași motiv ca și noi
-
-a discutat cazul nucleelor, adică cantitatea de agitație este mai mare
-
-decât raza medie a unor celule mici.                                                   | Din păcate, nu putem analiza cantitativ sensibilitatea
-
-de NuClick la squiggle se schimbă, deoarece
-
-modificările asociate nu sunt ușor de măsurat/parametrizable.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                         |
-| 2   | Florian Roberta, Alexia Calovoulosc, Laurent Facqa, Fanny Decoeurd, Etienne Gontierd,
-
-Christophe F. Grossetc and Baudouin Denis de Sennevillea | Enhancing Cell Instance Segmentation in Scanning Electron
-
-Microscopy Images via a Deep Contour Closing Operator | Cell segmentation from medical images | NnU-Net, A CNN Closing Operator(COp-Net,DIC-C2DH-HeLa cells dataset | Abordarea pentru segmentarea instanțelor celulare se bazează pe delimitarea limitelor celulei, care constă în
-
-doi pași rezumați. În primul rând, o hartă de probabilitate a conturului celulei în funcție de voxel este generată dintr-un SEM 3D
-
-imagine . Ulterior, se aplică un operator de închidere CNN (COp-Net) pentru a aborda golurile din celulă
-
-contururi. În cele din urmă, se aplică un algoritm de componentă conectată pentru a genera instanța celulei
-
-segmentare. | rezultatele au fost obţinute prin intermediul abordarii propuse şi a celei concurente folosind
-
-metode pe setul de date de validare privat nr2 ce au parametri de tip hiper impliciti. In intrarea SEM
-
-sunt raportate imaginea și segmentarea manuală, împreună cu rezultatele obținute folosind
-
-algoritmul Cellpose, decalajul concurent în pictarea
-
-metodei și modulul suplimentar propus COp-Net | Fiindca s-a folosit o arhitectură 2D pentru
-
-operatorul de închidere a conturului celulei COp-Net s-au putut evita provocările în obținerea de date segmentate manual ce erau inainte și s-a putut facilita
-
-comparația intre cele două tehnici menționate anterior.Aceasta performanță
-
- poate fi îmbunătățită cu ajutorul arhitecturii 3D nnU-Net,dar folosirea ei introduce dificultati suplimentare legate de achiziția de date, costurile de memorie de calcul și timpul de procesare. De asemenea, încercările noastre cu privire la 3D PDX pentru inferențe ortogonale și strategiile 2.5D nu au fost pe placul nostru din cauza interpolărilor necesare pentru
-
-corectarea unor anizotropii semnificative a pixelilor în afara planului. |                         |
-| 3   | Tuan Le Dinh,
-
-Suk-Hwan Lee, Seong-Geun Kwon, Ki-Ryong Kwon                                                                                     | Cell Nuclei Segmentation in Cryonuseg dataset using Nested Unet with EfficientNet Encoder                        | Cell segmentation from medical images | Nested Unet model , the EfficientNet,Cryonuseg,GAN                  | Antrenăm modelul Nested Unet cu EfficientNet ca si
-
-codificator prin alimentarea cu imagini de antrenament augmentate de la
-
-Setul de date Cryonuseg. După am pregătit
-
-model apoi am evaluat acuratețea cu testul
-
-stabilit pe trei valori, valoarea Scorului de zaruri, valoarea AJI,
-
-și metrica PQ cu evaluare de validare încrucișată de k ori.                                                                                                                                  | S-a creat un tabel in care s-au afisat rezultatul mediu la datul cu zarul,AJI si PQ pentru urmatoarele cazuri: Unet fără post-procesare,
-
- Unet cu postprocesare de bazin,
-
-Distanţa Unet ,
-
-Unet în două etape ,
-
-Modelul nostru propus fără
-
-post-procesare,
-
-Modelul nostru propus cu
-
-post-procesare a bazinului hidrografic                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                         |
-| 4   | Fatma Tuana Dogu,Hulya Dogan,Ramazan Ozgur Dogan,F. Sena Sezen/An aparitie 2024                                                                 | Performance Improvement in Blood Cell
-
+|Nr.|Autor(i)/An|Titlul articolului /proiectului|Aplicație /Domeniu|Tehnologii utilizate|Metodologie /Abordare|Rezultate|Limitări|Comentarii suplimentare|
+|:---:|:-----:|:-------------------------------:|:------------------|:------------------:|:-------------------:|:-------:|:-----:|:----------------------:|
+|1|Fatma Tuana Dogu,Hulya Dogan,Ramazan Ozgur Dogan,F. Sena Sezen/An aparitie 2024|Performance Improvement in Blood Cell
 Segmentation with Deep Learning-based Image
-
-Fusion Approach              | Segementare imagini medicale          | Deep Learning, Extended depth of focus(EDOF),CNN                    | Segmentarea cu deep learing , utilizand ,DOF cu hardware integrat pe microscop(suprapunerea tuturor imaginilor focusate in una singura), pe imagini optimizare din punct de vedere a focusului
-
-\-incodarea unor seturi de date cu diferite nivele de focus pentru a imbunatati imaginile de intrare                                                                                                                                                                                  | S-a observat o imbunatatire a performantelor din punct de vedere a parametrilor , ACC,SEN,SPE atunci cand este utilizat deep learning , fata de metodele clasice de segmentare                                                                                                                                                                                                                         | Performanta variaza in functie de microscop                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | \-                      |
-|     |                                                                                                                                                 |                                                                                                                  |                                       |                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                         |
-
+Fusion Approach
+|Segmentare imagini medicale|Deep Learning, Extended depth of focus(EDOF),CNN|Segmentarea cu deep learning , utilizand ,DOF cu hardware integrat pe microscop(suprapunerea tuturor imaginilor focusate in una singura), pe imagini optimizate din punct de vedere a focusului
+-decodarea unor seturi de date cu diferite nivele de focus pentru a imbunatati imaginile de intrare
+|S-a observat o imbunatatire a performantelor din punct de vedere a parametrilor , ACC,SEN,SPE atunci cand este utilizat deep learning , fata de metodele clasice de segmentare|Performanta variaza in functie de microscop|-|
+|2|Navid Alemi Koohbanani,Mostafa Jahanifa,Neda Zamani Tajadin,
+Nasir Rajpoot/An aparitie 2020
+|NuClick: A Deep Learning Framework for
+Interactive Segmentation of Microscopy Images
+|Object segmentation|CNN(convolutional neuronal network),Inclusion Map.and Exclusion Map|Segmentarea celulelor sau a altor parti componente are corpului uman dorite pentru prelucrare  ulterioara utilizand specificarea manuala a unui punct care apartine acelui corp indiferent daca imaginea data ca intrare corespunde tiparului imaginilor pentru care a fost antrenata reteaua CNN sau nu.|NuClick a obtinut o performanta cel putin la fel de bună ca cea mai avansata tehnologie in domeniu.|O distanta de 50 px de la celula poate duce la o scadere semnificativa a performantei.
+Eroarea nu poate fi masurata deoarece Nu Click se modifica constant
+|util pentru reducerea timpului de selectie a datelor de intrare atunci cand dorim sa automatizam detectia de celule|
+|3|Florian Roberta,Alexia Calovoulosc, Laurent Facqa,Fanny Decoeurd,Etienne Gontierd,Christophe,F. Grossetc,Baudouin Denis de Sennevillea|Enhancing Cell Instance Segmentation in Scanning Electron Microscopy Images via a Deep Contour Closing Operator|Cell segmentation from medical images|NnU-Net, A CNN Closing Operator(COp-Net,DIC-C2DH-HeLa cells dataset|Abordarea pentru segmentarea instanțelor celulare se bazează pe delimitarea limitelor celulei, care consta în doi pași rezumați. În primul rând, o hartă de probabilitate a conturului celulei în funcție de voxel este generată dintr-un SEM 3D imagine . Ulterior, se aplică un operator de închidere CNN (COp- Net) pentru a aborda golurile din celulă contururi. În cele din urmă, se aplică un algoritm de componentă conectată pentru a genera instanța celulei segmentare.|rezultatele au fost obţinute prin intermediul abordarii propuse şi a celei concurente folosind metode pe setul de date de validare privat nr2 ce au parametri de tip hiper impliciti. In intrarea SEM sunt raportate imaginea și segmentarea manuală, împreună cu rezultatele obținute folosind algoritmul Cellpose, decalajul concurent în pictarea metodei și modulul suplimentar propus COp-Net|Aceasta
+performanță introdusa de Cop-Net poate fi îmbunătățită cu ajutorul arhitecturii 3D nnU-Net,dar folosirea ei introduce dificultati suplimentare legate de achiziția de date, costurile de memorie de calcul și timpul de procesare.
+|-|
+|4|Agnimitra Sen, Shyamali Mitra, Sukanta ChakrabortyDebashri Mondal, KC Santosh, Nibaran Das
+/an aparitie 2022|Ensemble Framework for Unsupervised|segmentation in medical images|Algoritmi: K-means,K-means++, Mean Shift clustering. Fuzzy C-means clustering algorithm|Kmeans ofera clusterele nucleelo,Fuzzy C-means , decide clusterele finale dupa ce le suprapune , care vor deveni date de intrare pentru algortimul Kmeans++|Acest algoritm ofera rezultate promitatoare , depasind performantele algoritmilor nesupravegheati in acest domineiu cunoscuti pana in prezent |Nu sunt suficiente date medicale disponibile pentru public pentru antrenarea supravegheata , deci prin urmare eroarea este inca suficient de mare|-|
+|5|Shuping Yuan, Vladimir Y.Mariano|Cell Segmentation Algorithm of Fully Connected U-Net ++ Network|cell segmentation|Deep learning,U-Net|Introduce conexiuni dense între nodurile rețelei, permițând ca informațiile din diferite etape să fie transmise eficient. Aceste conexiuni ajută la menținerea caracteristicilor semantice și detaliilor fine, reducând decalajul semantic între encoder și decoder. Optimizează viteza de testare prin păstrarea părților importante ale modelului și reducerea parametrilor, ceea ce permite selectarea între precizie și viteză în funcție de necesități. Utilizează o metodă de upsampling care îmbină caracteristicile de la diferite niveluri de rezoluție, ajutând la recuperarea detaliilor fine în timpul procesului de segmentare.|Fata de abordarile deja existente, numarul de date de intrare necesar pentru invatare scade odata la 10 incercari cu 20 %.|Este sensibil la date de intare de calitate slaba , performanța este afectata in cazul in care celulele se suprapun sau sunt neclare|-|
 
 
 
