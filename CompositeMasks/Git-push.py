@@ -13,7 +13,7 @@ def main():
         for i in range(2,file_count_f):
             img=cv2.imread(rf'./Images/annotatedImages/{j}/masks/{i}.png')
             auxing=cv2.add(auxing, img)
-        cv2.imshow(rf'results_new_mask{j}',auxing)
+        cv2.imwrite(rf'results_new_mask{j}.png',auxing)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
      #salvare fisier
