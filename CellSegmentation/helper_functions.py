@@ -18,7 +18,7 @@ def statistics(annotated_mask, binary_img):
     false_negative = np.sum(black_img & white_mask)
 
     pixel_accuracy = (true_pozitive + true_negative) / (true_pozitive + true_negative + false_positive + false_negative)
-    if pixel_accuracy <0.1:
+    if pixel_accuracy <0.2:
         binary_img = 255 - binary_img
         white_mask = (annotated_mask == 255)
         black_mask = (annotated_mask == 0)
